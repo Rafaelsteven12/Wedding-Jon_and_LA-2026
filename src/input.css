@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --font-primary: "Cinzel", sans-serif;
+  --font-secondary: "Playfair", sans-serif;
+  --font-tertiary: "Great Vibes", cursive;
+}
+
+@theme {
+  --font-cinzel: "Cinzel", sans-serif;
+  --color-primary: #ffe4cf;
+  --color-secondary: #ffffff;
+  --color-tertiary: #4a311d;
+  --color-text-primary: #4a311d;
+}
+
+.font-primary {
+  font-family: var(--font-primary);
+}
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+.font-tertiary {
+  font-family: var(--font-tertiary);
+}
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 22px;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth scroll-p-16;
+  }
+  body {
+    @apply overflow-x-hidden font-cinzel text-text-primary text-base bg-white dark:bg-gray-900 dark:text-white/80;
+  }
+  .container {
+    @apply max-w-700 w-full mx-auto px-4;
+  }
+  h1 {
+    @apply text-[clamp(2rem,6vw,3rem)] font-extrabold;
+  }
+  h2 {
+    @apply text-[clamp(1.5rem,5vw,2.5rem)] font-extrabold;
+  }
+  h3 {
+    @apply text-[clamp(1.25rem,4vw,2rem)] font-extrabold;
+  }
+  h4 {
+    @apply text-[clamp(1rem,3vw,1.75rem)] font-bold;
+  }
+  h5 {
+    @apply text-xl font-semibold;
+  }
+  h6 {
+    @apply text-lg font-semibold;
+  }
+}
+
+@layer components {
+  header {
+    @apply bg-white dark:bg-gray-900 px-10 md:px-20;
+  }
+  .headerNav ul {
+    @apply flex flex-col gap-5 fixed w-full top-26 text-left items-start overflow-hidden right-0 h-0 opacity-0 duration-300 
+    /* tablet - desktop */
+    md:opacity-100 md:flex-row md:items-center md:top-auto
+    md:h-auto md:static md:shadow-none;
+  }
+  .headerNav ul.open {
+    @apply h-fit opacity-100 bg-white dark:bg-gray-900 shadow-md w-full top-24 px-4 pb-5 duration-300 pt-5
+    /* tablet - desktop */
+    md:shadow-none md:px-0 md:pb-0;
+  }
+  .headerNav ul li a {
+    @apply font-bold;
+  }
+  .toggleMenu span:first-child {
+    @apply inline-block w-7 h-0.5 rounded-xl bg-tertiary dark:bg-black/80;
+  }
+  .toggleMenu span:last-child {
+    @apply inline-block w-5 h-0.5 rounded-xl bg-tertiary dark:bg-black/80;
+  }
+  .toggleMenu.open span:first-child {
+    @apply w-5 duration-100;
+  }
+  .toggleMenu.open span:last-child {
+    @apply w-7;
+  }
+  .toggleMenu {
+    @apply flex flex-col gap-1
+    /* tablet - desktop */
+    md:hidden;
+  }
+  .transparent {
+    @apply hidden;
+  }
+  .transparent.open {
+    @apply block fixed h-screen w-full backdrop-blur-sm left-0 top-95 duration-300 overflow-y-hidden;
+  }
+  .title {
+    @apply mt-2 mb-4 leading-10;
+  }
+  .btn {
+    @apply inline-block px-6 py-3  rounded-lg font-medium
+    w-full text-center md:w-auto;
+  }
+  .btn--red {
+    @apply bg-transparent text-white hover:bg-primary w-50 border-2 border-primary;
+  }
+  .btn--primary {
+    @apply bg-secondary text-white hover:bg-white w-50 border-2 border-secondary hover:text-secondary;
+  }
+  .btn--secondary {
+    @apply bg-tertiary text-primary hover:bg-primary w-50 border-2 border-tertiary hover:text-tertiary;
+  }
+}
