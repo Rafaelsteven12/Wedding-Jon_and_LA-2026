@@ -2,7 +2,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --font-primary: "Cinzel", sans-serif;
+  --font-primary: "Merriweather", sans-serif;
   --font-secondary: "Playfair", sans-serif;
   --font-tertiary: "Great Vibes", cursive;
 }
