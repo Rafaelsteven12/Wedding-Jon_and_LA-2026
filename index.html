@@ -55,8 +55,8 @@
          <div class="flex items-center gap-2">
             <div class="w-fit h-20 hidden md:block" >  </div>
             <h5 class="">Jon and Lorie</h5>
-          </div>
-          <!-- nav -->
+          </div> 
+          <!-- nav --> 
           <nav class="headerNav">
             <ul class="uppercase">
               <li><a href="#home">Home</a></li>
@@ -64,7 +64,7 @@
               <li><a href="#details">Details</a></li>
               <li><a href="#gallery">Gallery</a></li>
               <li><a href="#venue">Venue</a></li> 
-              <li><a href="#rsvp">RSVP</a></li>
+              <li><a href="#seatfinder">Seat Finder</a></li>
             </ul>
           </nav>
           
@@ -92,7 +92,7 @@
         Jonathan
       </p>
 
-      <p class="font-primary text-[22px]" >&</p>
+      <p class="font-primary text-[28px] " >&</p>
 
       <p class="font-primary  font-normal text-6xl md:text-[100px]">
   Lorie Anne
@@ -227,14 +227,14 @@
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8 items-start">
             <div class="bg-primary rounded-3xl p-4 shadow-lg flex flex-col items-center">
-                <img src="img/sendmoney1.jpg" alt="Send money QR code 1" class="w-full max-w-[320px] h-auto rounded-3xl object-contain shadow-md" />
-                <h3 class="text-xl font-bold mt-4">Send Money</h3>
-                <p class="mt-2 text-sm text-center md:w-[320px]">Scan this QR code to send a gift. Your contribution will help us build our future together.</p>
+                <img src="img/sendmoney1.jpg" alt="Send money QR code 1" class="w-full max-w-[160px] h-auto rounded-3xl object-contain shadow-md" />
+                <h3 class="text-xl font-bold mt-4">Scan QR code</h3>
+                
             </div>
             <div class="bg-primary rounded-3xl p-4 shadow-lg flex flex-col items-center">
-                <img src="img/sendmoney2.jpg" alt="Send money QR code 2" class="w-full max-w-[320px] h-auto rounded-3xl object-contain shadow-md" />
-                <h3 class="text-xl font-bold mt-4">Send a Gift</h3>
-                <p class="mt-2 text-sm text-center md:w-[320px]">Scan this QR code to send a gift, registry item, or cash gift. Every gift is deeply appreciated.</p>
+                <img src="img/sendmoney2.jpg" alt="Send money QR code 2" class="w-full max-w-[160px] h-auto rounded-3xl object-contain shadow-md" />
+                <h3 class="text-xl font-bold mt-4">Scan QR code</h3>
+                
             </div>
         </div>
             </div>
@@ -325,34 +325,20 @@
             </div>
         </div>
        </section>
-       <!-- RSVP -->
-       <section class="bg-primary py-10 text-center" id="rsvp">
+       <!-- Seat Finder -->
+       <section class="bg-primary py-10 text-center" id="seatfinder">
   <div class="container">
-
-    <!-- Title -->
-    <div>
-      <h2>Attendance</h2>
+    <div class="max-w-3xl mx-auto">
+      <h2>Seat Finder</h2>
       <p class="py-5 md:w-150 md:mx-auto">
-        Kindly confirm your attendance as we prepare to celebrate this special day with you.
+        Search your name to find your assigned table number.
       </p>
+      <div class="flex flex-col items-center gap-4">
+        <input id="seatFinderInput" type="search" placeholder="Enter your name" class="w-full max-w-xl rounded-full border border-tertiary bg-white px-5 py-3 text-black outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/30" />
+        <button id="seatFinderButton" class="btn btn--secondary w-[150px] max-w-xs">Search</button>
+      </div>
+      <div id="seatFinderResult" class="mt-6  p-5 text-lg text-tertiary text-center"></div>
     </div>
-
-    <!-- QR + Text -->
-    <div class="flex flex-col md:flex-row items-center justify-center gap-8 max-w-3xl mx-auto text-center md:text-left">
-      
-      <!-- QR -->
-      <img class="w-40 h-40 shrink-0" src="img/qr.png" alt="qrcode">
-
-      <!-- Description -->
-      <p>
-        Simply scan the QR code or click the button to confirm your attendance. Your response will help us prepare a seamless and memorable celebration for everyone.
-      </p>
-
-    </div>
-
-    <!-- Button -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScW8ML3-bcL2QB2S2yFwmm1dwxXBaOSRpE7UjYf-VEM34Irrw/viewform" class="btn btn--secondary w-40 mx-auto block mt-5" target="_blank">RSVP Link</a>
-
   </div>
 </section>
        <footer class="bg-white py-5 text-tertiary">
@@ -366,6 +352,152 @@
         </div>
        </footer>
     <!-- script -->
+    <script>
+      const seatAssignments = [
+        { table: 'VIP Table 1', name: 'Laura Lerma' },
+        { table: 'VIP Table 1', name: 'Alicia Borrego' },
+        { table: 'VIP Table 1', name: 'Antonio Borrego' },
+        { table: 'VIP Table 1', name: 'Mayor Arjay Man' },
+        { table: 'VIP Table 1', name: 'Ricky Rodriguez' },
+        { table: 'VIP Table 1', name: 'Bryan Arpetilia' },
+        { table: 'VIP Table 1', name: 'Emeralda Reyes' },
+        { table: 'VIP Table 1', name: 'Kristy Ricohermoso' },
+        { table: 'VIP Table 1', name: 'Maximo Ricohermoso' },
+        { table: 'VIP Table 1', name: 'Aleno Lector' },
+        { table: 'VIP Table 1', name: 'Francisco Lector' },
+        { table: 'VIP Table 1', name: 'Nomar Dolos Reyes' },
+        { table: 'VIP Table 1', name: 'Gina Dela Reyna' },
+        { table: 'VIP Table 2', name: 'Boyeth Bayron' },
+        { table: 'VIP Table 2', name: 'Loida Bayron' },
+        { table: 'VIP Table 2', name: 'Bryan Bayron' },
+        { table: 'VIP Table 2', name: 'Rizza Angles' },
+        { table: 'VIP Table 2', name: 'Rosella Angeles' },
+        { table: 'VIP Table 2', name: 'Tyra "Little Bride"' },
+        { table: 'VIP Table 2', name: 'Lourdes Rafael' },
+        { table: 'VIP Table 2', name: 'Lorrie Bautista' },
+        { table: 'VIP Table 2', name: 'Tony Bautista' },
+        { table: 'VIP Table 2', name: 'Rico Alcairo' },
+        { table: 'VIP Table 2', name: 'Flor Alcairo' },
+        { table: 'VIP Table 2', name: 'Glo Alcairo' },
+        { table: 'VIP Table 2', name: 'Emil Alcairo' },
+        { table: 'VIP Table 2', name: 'Mommy Nors' },
+        { table: 'Round Table 1', name: 'Francis Espejo' },
+        { table: 'Round Table 1', name: 'Katie Reyes' },
+        { table: 'Round Table 1', name: 'Zachy Tan' },
+        { table: 'Round Table 1', name: 'Jerome Agustin' },
+        { table: 'Round Table 1', name: 'Juan Diasanta' },
+        { table: 'Round Table 1', name: 'Marimar Saborola' },
+        { table: 'Round Table 1', name: 'Dimitry Ceka' },
+        { table: 'Round Table 1', name: 'Mina Tomas' },
+        { table: 'Round Table 1', name: 'Dats Jainal' },
+        { table: 'Round Table 1', name: 'Ryan Samio' },
+        { table: 'Round Table 2', name: 'Jaypee Bayron' },
+        { table: 'Round Table 2', name: 'Jake Andrea Bayron' },
+        { table: 'Round Table 2', name: 'Josa Catapang' },
+        { table: 'Round Table 2', name: 'Eugene Catapang' },
+        { table: 'Round Table 2', name: 'Jerry Rivera' },
+        { table: 'Round Table 2', name: 'Alma Cadacio' },
+        { table: 'Round Table 2', name: 'Myrna Castillo' },
+        { table: 'Round Table 2', name: 'Jhuether Bayron' },
+        { table: 'Round Table 2', name: 'Agnes Atienza' },
+        { table: 'Round Table 2', name: 'Adrian Atienza' },
+        { table: 'Round Table 3', name: 'Roglen Lee' },
+        { table: 'Round Table 3', name: 'Kim Ibanez-Choe' },
+        { table: 'Round Table 3', name: 'Eric Choe' },
+        { table: 'Round Table 3', name: 'Jason Landin' },
+        { table: 'Round Table 3', name: 'Angel Rodriguez' },
+        { table: 'Round Table 3', name: 'Adriana Cruz' },
+        { table: 'Round Table 3', name: 'Danica Corsiga' },
+        { table: 'Round Table 3', name: 'Sheena Balbahadia' },
+        { table: 'Round Table 3', name: 'Irelan Cruz' },
+        { table: 'Round Table 3', name: 'Martin Mendioro' },
+        { table: 'Round Table 4', name: 'Aki Delas Alas' },
+        { table: 'Round Table 4', name: 'Ruby Ann Iranzo' },
+        { table: 'Round Table 4', name: 'Nath Castillo' },
+        { table: 'Round Table 4', name: 'Charissa Mercado' },
+        { table: 'Round Table 4', name: 'Camilla Uy' },
+        { table: 'Round Table 4', name: 'Aizal Saligumba' },
+        { table: 'Round Table 4', name: 'Menchie Marquez' },
+        { table: 'Round Table 4', name: 'Kayleen Perlas' },
+        { table: 'Round Table 4', name: 'Danise Aldea Baluyot' },
+        { table: 'Round Table 5', name: 'Algene Buena' },
+        { table: 'Round Table 5', name: 'Thesa Lector-Buena' },
+        { table: 'Round Table 5', name: 'Russell Macawili' },
+        { table: 'Round Table 5', name: 'Miriam Macawili' },
+        { table: 'Round Table 5', name: 'Jinky Flake' },
+        { table: 'Round Table 5', name: 'Matthew Ricohermoso' },
+        { table: 'Round Table 5', name: 'Rod Macawili' },
+        { table: 'Round Table 5', name: 'Bianca Alano' },
+        { table: 'Round Table 6', name: 'Jake Alcairo' },
+        { table: 'Round Table 6', name: 'Javin "Little Groom" (baby - 1yo)' },
+        { table: 'Round Table 6', name: 'Janine Alcairo' },
+        { table: 'Round Table 6', name: 'Pamela Alcairo' },
+        { table: 'Round Table 6', name: 'Alexandra Alcairo' },
+        { table: 'Round Table 6', name: 'Lorraine Jane Alcairo' },
+        { table: 'Round Table 6', name: 'Yeyeng "Flower Girl" (baby - 2yo)' },
+        { table: 'Round Table 6', name: 'Prince D.M. Concha' },
+        { table: 'Round Table 6', name: 'John Lester Alcairo' },
+        { table: 'Round Table 6', name: 'Cyrene Santos' },
+        { table: 'Round Table 6', name: 'Ryan Santos' },
+        { table: 'Round Table 7', name: 'Steven Rafael' },
+        { table: 'Round Table 7', name: 'Kathline Lopes' },
+        { table: 'Round Table 7', name: 'Marc Anthony Bautista' },
+        { table: 'Round Table 7', name: 'Andrea Antiniolo' },
+        { table: 'Round Table 7', name: 'Janna Carada' },
+        { table: 'Round Table 7', name: 'Carlo Bautista' },
+        { table: 'Round Table 7', name: 'Aldwin Alcairo' },
+        { table: 'Round Table 7', name: 'Samantha Manalo' },
+        { table: 'Round Table 7', name: 'Louryn Eve' },
+        { table: 'Round Table 7', name: 'Syriana Reyes' },
+        { table: 'Round Table 7', name: 'Arlyn Peñana' }
+      ];
+
+      const seatFinderInput = document.getElementById('seatFinderInput');
+      const seatFinderButton = document.getElementById('seatFinderButton');
+      const seatFinderResult = document.getElementById('seatFinderResult');
+
+      const formatQuery = (value) => value.trim().toLowerCase();
+
+      const renderResults = (matches, query) => {
+        if (!query) {
+          seatFinderResult.innerHTML = '<p class="text-tertiary">Type a guest name above to search your table number.</p>';
+          return;
+        }
+
+        if (!matches.length) {
+          seatFinderResult.innerHTML = `<p class="text-tertiary">No results found for “${query}”. Please try another name.</p>`;
+          return;
+        }
+
+        seatFinderResult.innerHTML = `
+          
+          <ul class="space-y-3">
+            ${matches
+              .map(
+                (item) =>
+                  `<li class="rounded-2xl border border-secondary/20 bg-secondary/10 p-4 text-lg"><span class="font-semibold">${item.name}</span><br /><span class="text-tertiary">${item.table}</span></li>`
+              )
+              .join('')}
+          </ul>
+        `;
+      };
+
+      const searchSeats = () => {
+        const query = formatQuery(seatFinderInput.value);
+        const matches = seatAssignments.filter((item) => item.name.toLowerCase().includes(query));
+        renderResults(matches, seatFinderInput.value.trim());
+      };
+
+      seatFinderButton.addEventListener('click', searchSeats);
+      seatFinderInput.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          searchSeats();
+        }
+      });
+
+      renderResults([], '');
+    </script>
     <script src="js/theme-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
     <script src="js/toggle-menu.js"></script>
